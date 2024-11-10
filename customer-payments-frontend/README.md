@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Customer International Payments Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a web-based application designed to enable customers to register, login, and perform secure international payments. Employees can log in to verify and approve payments, completing transactions via SWIFT. The portal uses MongoDB for data storage, Node.js/Express for the backend API, and React for the frontend. 
 
-## Available Scripts
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Setup Instructions](#setup-instructions)
+- [Folder Structure](#folder-structure)
+- [API Endpoints](#api-endpoints)
+- [Known Issues](#known-issues)
+- [Future Improvements](#future-improvements)
 
-In the project directory, you can run:
+## Features
+- **Customer Registration**: Customers can register by providing their full name, ID number, account number, and password.
+- **Customer Login**: Login to access the payment dashboard.
+- **Payment Processing**: Customers can submit payments by providing details like amount, currency, provider, and SWIFT code.
+- **Employee Login**: Employees can log in to verify payments and approve them.
+- **SWIFT Integration**: Employees can submit payments to SWIFT after verification.
 
-### `npm start`
+## Tech Stack
+- **Frontend**: React (with React Router for navigation)
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Security**: Bcrypt (for password hashing), SSL (for secure connections)
+- **API Testing**: Postman
+- **Version Control**: Git & GitHub
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup Instructions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/VCDN-2024/apds7311-part-2-Ethan-Swanepoel.git
+   cd apds7311-part-2-Ethan-Swanepoel
+   ```
 
-### `npm test`
+2. **Install Dependencies**:
+   Navigate to both the backend and frontend directories and run the following command:
+   ```bash
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Backend Setup**:
+   - Configure your MongoDB connection string in the `.env` file.
+   - Start the backend server:
+     ```bash
+     cd backend
+     npm start
+     ```
 
-### `npm run build`
+4. **Frontend Setup**:
+   - Start the frontend development server:
+     ```bash
+     cd frontend
+     npm start
+     ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. **Running the Application**:
+   - Visit `http://localhost:3000` in your browser to access the app.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Folder Structure
+```bash
+├── backend
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   └── app.js
+├── frontend
+│   ├── public
+│   ├── src
+│   │   ├── components
+│   │   └── App.js
+├── .env
+└── README.md
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Endpoints
+### Customer Routes:
+- **POST** `/customer/register_customer_details`: Register a new customer.
+- **POST** `/customer/login`: Login customer and verify credentials.
+- **POST** `/customer/payment`: Make a new payment.
 
-### `npm run eject`
+### Employee Routes:
+- **POST** `/employee/login`: Login employee and verify credentials.
+- **GET** `/employee/payments`: Fetch all customer payments for verification.
+- **POST** `/employee/verify-payment`: Verify a customer’s payment.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Known Issues
+- Error handling for network or server issues is basic and can be improved.
+- More detailed validation for inputs could be implemented.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Improvements
+- Implement role-based access control (RBAC) for added security.
+- Add unit and integration tests for both the frontend and backend.
+- Integrate with SWIFT's API for direct submission.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
