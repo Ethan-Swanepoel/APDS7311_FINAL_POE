@@ -30,7 +30,7 @@ This project is a web-based application designed to enable customers to register
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/VCDN-2024/apds7311-part-2-Ethan-Swanepoel.git
+   git clone https://github.com/Ethan-Swanepoel/APDS7311_FINAL_POE.git
    cd apds7311-part-2-Ethan-Swanepoel
    ```
 
