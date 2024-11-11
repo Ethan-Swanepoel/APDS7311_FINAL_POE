@@ -35,7 +35,7 @@ export default function Register() {
     try {
       console.log('Attempting to register:', newCustomer);
 
-      const response = await fetch('http://localhost:3001/customer/register_customer_details', {
+      const response = await fetch('https://localhost:3001/customer/register_customer_details', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

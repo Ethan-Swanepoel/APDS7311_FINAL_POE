@@ -14,7 +14,7 @@ function Payment() {
   const handlePayment = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/payment/register_payment_details', {
+      const response = await axios.post('https://localhost:3001/payment/register_payment_details', {
         recipient_account: recipientAccount,
         amount: amount,
         currency: currency,

@@ -17,7 +17,7 @@ export default function Swift() {
           return navigate('/login');
         }
 
-        const response = await fetch('http://localhost:3001/payment/get_payment_details', {
+        const response = await fetch('https://localhost:3001/payment/get_payment_details', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ function EmployeeLogin() {
     setErrorMessage(''); // Clear any previous error message
 
     try {
-      const response = await axios.post('http://localhost:3001/employee/login', {
+      const response = await axios.post('https://localhost:3001/employee/login', {
         username: username,
         password: password,
       });
