@@ -15,10 +15,10 @@ const options = {
 }
 
 app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST', 'PATCH', 'DELETE'],  // Allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'],  // Allowed headers
-    credentials: true
+    origin: 'https://localhost:3000',  // Allow requests from your HTTPS frontend
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],  // Specify allowed HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'],  // Specify allowed headers
+    credentials: true  // Allow cookies and credentials to be sent with requests
 }));
 
 
